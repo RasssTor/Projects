@@ -1,0 +1,33 @@
+.container {
+	position: fixed;
+	background: #98e3be;
+	width: 84%;
+	margin: 0 8% ;
+	border-radius: 5px;
+
+}
+
+.button {
+	width: 21%;
+	padding: 14px 35px;
+	background: #89ccae;
+	text-align: center;
+	border-radius: 5px;
+	font: 12pt Bradley Hand, cursive;  ;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.helpHead {
+	height: 100px;
+}
+
+.logo { display: block;
+	width:18%;
+	margin-left: 26%;
+
+}
+

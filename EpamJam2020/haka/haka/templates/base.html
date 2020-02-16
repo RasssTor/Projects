@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Название</title>
+	<meta name="viewport" content="initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<div class="logo">
+				<img src="{% static 'images/cat-white.png' %}" alt="">
+				<a href="#"><h1>Подари шанс</h1></a>
+			</div>
+			<nav>
+
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<div class="container">
+			<div class="description">
+				<p>Кто если не ты? Дай им шанс поделиться своим теплом! 
+
+					Животные не имущество, ненужных не бывает! Они имеют право на любящую семью и заботу о себе. Стань посредником добра для этих маленьких сердечек, помоги им найти свой дом!</p>
+			</div>
+			<div class="line"></div>
+			<h2>Оставь объявление</h2>
+			<div class="form">
+				<form action="{% url 'animals:vote' %}" method ="POST" enctype="multipart/form-data">
+					<table>
+						<tr>
+							<td class="name">Имя</td>
+							<td class="input input-name">
+								<input type="text" name="name" required placeholder="Бобик">
+							</td>
+						</tr>
+						<tr>
+							<td class="name">Пол</td>
+							<td class="input input-sex">
+								<input type="radio" name="sex" id="male" value="male" checked required>
+								<label for="male">Мужской</label>
+								<input type="radio" name="sex" id="female" value="female" required>
+								<label for="female">Женский</label> <br>
+								<input type="radio" name="sex" id="unknow" value="unknow" required>
+								<label for="unknow">Не могу определить</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">Возраст</td>
+							<td class="input input-age">
+								<input type="number" name="year" value=0 min=0 max=100 required> год 
+								<input type="number" name="month" value=0 min=0 max=11 required> месяц
+							</td>
+						</tr>
+						<tr>
+							<td class="name">Разновидность</td>
+							<td class="input input-class">
+								<input type="radio" name="class" id="dog" value="Собака" checked required>
+								<label for="dog">Собака</label>
+								<input type="radio" name="class" id="cat" value="Кот" required>
+								<label for="cat">Кот</label>
+								<input type="radio" name="class" id="other" value="Другое" required>
+								<label for="other">Другое</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">Фото</td>
+							<td class="input input-photo">
+								{% csrf_token %}
+								    <p>
+								        <input id="id_image" type="file" class="" name="image">
+								    </p>
+
+							</td>
+						</tr>
+						<tr>
+							<td class="name">Комментарий</td>
+							<td class="input input-desc">
+								<input type="text" name="desc" placeholder="Мой песик любит кисок!" >
+							</td>
+						</tr>
+						<tr>
+							<td class="name">Почта</td>
+							<td class="input input-vk">
+								<input type="text" name="email" required placeholder="example@gmail.com" >
+							</td>
+						</tr>
+					</table>
+					
+					<div class="field">
+						<input type="submit" value="Отправить">
+					</div>
+				
+				</form>
+			</div>
+		</div>
+		
+	</main>
+
+	<section>
+		<div class="container">
+			<h2>Каталог</h2>
+			<div class="cards">
+
+					{% block content %}
+					{% endblock %}
+
+			</div>
+		</div>
+	</section>
+
+
+	<footer>
+		<div class="container">
+			<address>(с) - 2020, Гомель.</address>
+		</div>
+	</footer>
+
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="exampleModalCenterTitle">Введите следующие данные</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			  <form action="{% url 'animals:send_message' %}" id="send" method ="POST">
+			  	{% csrf_token %}
+				<div>Имя:</div>
+				<input type="text" name="name" id="" required>
+				<div>Телефон:</div>
+				<input type="text" name="phone" id="" required>
+				<div>Собщение:</div>
+				<input type="text" name="msg" id="">
+			  </form>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+			  <button type="submit" name="id" form="send" class="btn" value="" id="send-btn">Отправить</button>
+			</div>
+		  </div>
+		</div>
+	 </div>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+
+			$(".card-button").click(function(){
+				$("#send-btn").val($(this).data("id"));
+			})
+
+		});
+	</script>
+</body>
+
+</html>

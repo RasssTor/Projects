@@ -1,0 +1,317 @@
+body {
+    font-size: 18px;
+    background-color: #fff;
+    font-family: sans-serif;
+    width: 100%;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    background-color: #fff;
+    padding: 30px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: block;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo * {
+    display: inline-block;
+}
+
+.logo img {
+    height: 30px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #00dcc9;
+}
+
+main {
+    font-size: 1.1em;
+    background-color: #00dcc9;
+    background-image: linear-gradient(-45deg, #00dcd4, #00dca9);
+}
+
+main h2 {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.7em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+main .line {
+    height: 1px;
+    width: 60%;
+    background-color: white;
+    margin: 0 auto;
+}
+
+main .form {
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 10px 20px 0px rgba(0,0,0,.3);
+    transform: translateY(40px);
+    padding: 20px;
+    border-radius: 3px;
+}
+
+main .form table {
+    width: 100%;
+    font-size: 1.2em;
+}
+
+main .form td.name {
+    text-align: right;
+    padding: 20px 40px 10px 0;
+    border-right: 3px solid #00dcc9;
+    color: #00dcc9;
+}
+
+main .form td.input {
+    padding: 10px 0 10px 40px;
+    color: #aaa;
+    font-size: 0.7em;
+    position: relative;
+}
+
+main .form td.input::before {
+    display: none;
+    color: #00dcc9;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.2em;
+}
+
+main .form td.input.input-name::before {content: "Имя:";}
+main .form td.input.input-sex::before {content: "Пол:";}
+main .form td.input.input-age::before {content: "Возраст:";}
+main .form td.input.input-class::before {content: "Разновидность:";}
+main .form td.input.input-photo::before {content: "Фото:";}
+main .form td.input.input-desc::before {content: "Комментарий:";}
+main .form td.input.input-vk::before {content: "Почта:";}
+
+main .form input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #eee;
+}
+
+main .form input[type="number"] {
+    margin: 0 3px 0 0px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #eee;
+}
+
+main .form input[name="month"] {
+    margin: 0 3px 0 15px;
+}
+
+main .form input[name="file"] {
+    background-image: none;
+    background-color: #00dcc9;
+}
+
+main .form input[type="submit"] {
+    font-size: 1.5em;
+    padding: 5px 30px;
+    color: white;
+    border: none;
+    background-color: #FDC830;
+    background-image: linear-gradient(-45deg, #FDC830, #f5af19);
+    cursor: pointer;
+    box-shadow: 0 3px 3px 0px rgba(0,0,0,.2);
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+main .form .field {
+    text-align: right;
+}
+
+main .description p {
+    text-align: center;
+    padding: 50px 100px 20px 100px;
+    color: white;
+    line-height: 1.5em;
+}
+
+main .declaration {
+    margin-top: 20px;
+    text-align: center;
+}
+
+main .declaration-button {
+    padding: 10px;
+    background-color: #FFC107;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 3px 5px 0px rgba(0,0,0,.4);
+    display: inline-block;
+}
+
+section {
+    margin-top: 150px;
+}
+
+section h2 {
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #00dcc9;
+    letter-spacing: 0.2em;
+}
+
+section .cards {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+section .card {    
+    flex-basis: 300px;
+    background-color: white;
+    box-shadow: 0 3px 5px 0px rgba(0,0,0,.4);
+    margin: 20px;
+}
+
+section .card .picture {
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+section .card .card-description {
+    padding: 20px;
+    color: #757575;
+} 
+
+section .card .card-description li {
+    margin-top: 5px;
+}
+
+section .card .card-description li.name {
+    color: black;
+}
+
+section .card .button-wrap {
+    text-align: right;
+    padding: 0 20px 20px 0;
+}
+
+section .card .card-button {
+    padding: 10px;
+    background-color: #00dcc9;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 3px 5px 0px rgba(0,0,0,.4);
+    display: inline-block;
+}
+
+#send-btn {
+    background-color: #00dcc9;
+    color: white;
+}
+
+footer {
+    margin-top: 70px;
+    background-color: #fafafa;
+    padding: 30px;
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.modal-body div {
+    color: #00dcc9;
+    padding: 15px 0 5px 0;
+}
+.modal-body input {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #eee;
+    border: none;
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+@media screen and (max-width: 666px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        max-width: none;
+    }
+
+    main .description p {
+        text-align: center;
+        padding: 25px 50px 10px 50px;
+        color: white;
+        line-height: 1.5em;
+    }
+
+    main .form {
+        width: 90%;
+        max-width: none;
+    }
+
+    main .form table .name {
+        display:none;
+        padding: 0;
+    }
+
+    main .form table .input {
+        padding: 35px 5px 5px 5px;
+    }
+
+    header {
+        padding: 15px 0;
+    }
+    
+    main .form .field {
+        text-align: center;
+    }
+
+    main .form td.input::before {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    body {
+        font-size: 12px;
+    }
+
+    main .form {
+        padding: 10px;
+    }
+}

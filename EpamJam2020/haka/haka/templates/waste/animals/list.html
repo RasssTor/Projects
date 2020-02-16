@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+{% block content %}
+{% if latest_animals_list %}
+	
+	{% for a in latest_animals_list %}
+		{{a.animal_name}}
+	{% endfor %}
+
+{% endif %}
+{% endblock %}

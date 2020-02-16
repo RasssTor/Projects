@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {% endblock %}
+{% block content %}
+{% for a in latest_animals_list %}
+				<div class="card">
+					<div class="picture" style="background-image: url({% static '' %}upload/{{a.id}}.jpg);">
+						
+					</div>
+					<div class="card-description">
+						<ul>
+							<li class="name">Имя - {{a.animal_name}}</li>
+							<li>Возраст - {{a.animal_age}} месяц(-ев)</li>
+							<li>{{a.animal_sex}}</li>
+						</ul>
+					</div>
+					<div class="button-wrap">
+						<a href="#" class="card-button" data-id="{{a.id}}" data-toggle="modal" data-target="#exampleModalCenter">Откликнуться</a>
+					</div>
+				</div>
+{% endfor %}
+{% endblock %}
+
+	
+
+
